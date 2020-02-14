@@ -31,7 +31,7 @@ def parse_args():
 
 
 def clib_call(arguments):
-    lib = ctypes.cdll.LoadLibrary("./percdiff.so")
+    lib = ctypes.cdll.LoadLibrary("lib/percdiff.so")
     clib = ctypes.CDLL(ctypes.util.find_library('c'))
     lib.check_input.argtypes = (ctypes.c_char_p,)
     lib.check_input.restype = ctypes.c_char_p
