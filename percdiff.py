@@ -1,8 +1,13 @@
+#!/usr/bin/env python3
+
 import ctypes
 import ctypes.util
 import getopt
+import os
 import pyperclip
 import sys
+
+SCRIPT_LOCATION = os.path.dirname(__file__)
 
 
 def usage():
@@ -31,7 +36,8 @@ def parse_args():
 
 
 def clib_call(arguments):
-    lib = ctypes.cdll.LoadLibrary("lib/percdiff.so")
+    libpath = SCRIPT_LOCATION + "/lib/percdiff.so"
+    lib = ctypes.cdll.LoadLibrary(libpath)
     clib = ctypes.CDLL(ctypes.util.find_library('c'))
     lib.check_input.argtypes = (ctypes.c_char_p,)
     lib.check_input.restype = ctypes.c_char_p
