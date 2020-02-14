@@ -1,0 +1,12 @@
+# Vim files
+[._]*.sw[pon]
+*.so
+
+# C files
+*.so
+*.o
+*.a
+
+# Pyton files
+venv/
+
